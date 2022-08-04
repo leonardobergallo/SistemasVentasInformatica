@@ -13,7 +13,7 @@ import ReporteVenta from './views/ReporteVenta';
 import Usuario from './views/Usuario';
 import Venta from './views/Venta';
 import Login from './views/Login';
-import Proveedor from './views/Proovedor';
+import Proveedor from './views/Proveedor';
 
 import UserProvider from "./context/UserProvider"
 import VerificarUsuario from './componentes/VerificarUsuario';

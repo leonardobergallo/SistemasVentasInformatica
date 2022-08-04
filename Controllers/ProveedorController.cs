@@ -22,7 +22,7 @@ namespace ReactVentas.Controllers
             List<Proveedor> lista = new List<Proveedor>();
             try
             {
-                lista = await _context.Proveedor.OrderByDescending(c => c.idProveedores).ToListAsync();
+                lista = await _context.Proveedor.OrderByDescending(c => c.IdProveedor).ToListAsync();
                 return StatusCode(StatusCodes.Status200OK, lista);
             }
             catch (Exception ex)

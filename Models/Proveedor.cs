@@ -9,7 +9,7 @@ namespace ReactVentas.Models
         {
             Productos = new HashSet<Producto>();
         }
-        public int idProveedores { get; set; }
+        public int IdProveedor { get; set; }
         public string? NroDocumento { get; set; }
         public string? RazonSocial { get; set; }
         public string? Correo { get; set; }

@@ -34,9 +34,9 @@ namespace ReactVentas.Models
         {
             modelBuilder.Entity<Proveedor>(entity =>
             {
-                entity.HasKey(e => e.idProveedores);
-
-                entity.Property(e => e.idProveedores).HasColumnName("idProveedores");
+                entity.HasKey(e => e.IdProveedor);
+                
+                entity.Property(e => e.IdProveedor).HasColumnName("idProveedores");
 
                 entity.Property(e => e.Correo)
                     .HasColumnName("correo")
