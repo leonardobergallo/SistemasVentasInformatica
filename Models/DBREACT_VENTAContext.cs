@@ -17,6 +17,7 @@ namespace ReactVentas.Models
         }
 
         public virtual DbSet<Categoria> Categoria { get; set; } = null!;
+        public virtual DbSet<Proveedor> Proveedor { get; set; } = null!;
         public virtual DbSet<DetalleVenta> DetalleVenta { get; set; } = null!;
         public virtual DbSet<NumeroDocumento> NumeroDocumentos { get; set; } = null!;
         public virtual DbSet<Producto> Productos { get; set; } = null!;
@@ -31,6 +32,36 @@ namespace ReactVentas.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Proveedor>(entity =>
+            {
+                entity.HasKey(e => e.idProveedores);
+
+                entity.Property(e => e.idProveedores).HasColumnName("idProveedores");
+
+                entity.Property(e => e.Correo)
+                    .HasColumnName("correo")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.EsActivo)
+                    .HasColumnName("esActivo")
+                    .HasDefaultValueSql("((1))");
+                entity.Property(e => e.FechaRegistro)
+                    .HasColumnName("fechaRegistro")
+                    .HasColumnType("datetime");
+                entity.Property(e => e.NroDocumento)
+                    .HasColumnName("nroDocumento")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+                entity.Property(e => e.RazonSocial)
+                    .HasColumnName("razonSocial")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+                entity.Property(e => e.Telefono)
+                    .HasColumnName("telefono")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+            });               
             modelBuilder.Entity<Categoria>(entity =>
             {
                 entity.HasKey(e => e.IdCategoria)
